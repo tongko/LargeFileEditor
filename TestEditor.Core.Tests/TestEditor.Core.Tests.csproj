@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{682535D4-42C2-44BC-A34E-F3A76A67F440}</ProjectGuid>
+    <ProjectGuid>{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TextEditor.Core</RootNamespace>
-    <AssemblyName>TextEditor.Core</AssemblyName>
+    <RootNamespace>TestEditor.Core.Tests</RootNamespace>
+    <AssemblyName>TestEditor.Core.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,12 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OperationHistory.cs" />
-    <Compile Include="LinkedNode.cs" />
-    <Compile Include="LinkedStack.cs" />
+    <Compile Include="LinkedStackTests.cs" />
+    <Compile Include="SpanTableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Span.cs" />
-    <Compile Include="SpanTable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextEditor.Core\TextEditor.Core.csproj">
+      <Project>{682535d4-42c2-44bc-a34e-f3a76a67f440}</Project>
+      <Name>TextEditor.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
