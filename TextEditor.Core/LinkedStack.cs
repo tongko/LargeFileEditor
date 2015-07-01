@@ -42,6 +42,11 @@
 			return _tail == null ? default(T) : _tail.Value;
 		}
 
+		public void Clear()
+		{
+			_tail = null;
+		}
+
 		private static void Bind(LinkedNode<T> n1, LinkedNode<T> n2)
 		{
 			if (n1 != null) n1.Next = n2;

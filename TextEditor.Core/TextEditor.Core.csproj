@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Document.cs" />
+    <Compile Include="DocumentHelper.cs" />
+    <Compile Include="DocumentView.cs" />
     <Compile Include="OperationHistory.cs" />
     <Compile Include="LinkedNode.cs" />
     <Compile Include="LinkedStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuntimeSettings.cs" />
     <Compile Include="Span.cs" />
     <Compile Include="SpanTable.cs" />
   </ItemGroup>
