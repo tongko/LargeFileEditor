@@ -41,8 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Document.cs" />
-    <Compile Include="DocumentHelper.cs" />
-    <Compile Include="DocumentView.cs" />
+    <Compile Include="DocumentEditor.cs" />
     <Compile Include="OperationHistory.cs" />
     <Compile Include="LinkedNode.cs" />
     <Compile Include="LinkedStack.cs" />

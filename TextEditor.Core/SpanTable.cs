@@ -10,10 +10,25 @@
 		private long _currentOffset;
 
 #if DEBUG
-		public Span Head { get { return _head; } }
+		public Span Head
+		{
+			get { return _head; }
+		}
 
-		public Span Tail { get { return _tail; } }
+		public Span Tail
+		{
+			get { return _tail; }
+		}
 #endif
+
+		public static SpanTable CreateEmptySpanTable(int initialBufferIndex)
+		{
+			var span = new Span(initialBufferIndex, 0, 0);
+			var table = new SpanTable();
+			table._head = table._tail = span;
+
+			return table;
+		}
 
 		public void Insert(long offset, long length)
 		{
@@ -31,7 +46,7 @@
 			_currentOffset += length;
 			Span span;
 			var index = Find(offset, out span);
-			if (index == 0)		//	insert at begining of span
+			if (index == 0) //	insert at begining of span
 			{
 				_undo.Push(span);
 				s.Previous = span.Previous;
@@ -59,7 +74,7 @@
 			}
 			else if (index < 0)
 			{
-				_undo.Push(new Span(s.Buffer, 0, 0) { Previous = _tail, Next = null });
+				_undo.Push(new Span(s.Buffer, 0, 0) {Previous = _tail, Next = null});
 				_tail.Next = s;
 				s.Previous = _tail;
 				_tail = s;
@@ -76,12 +91,12 @@
 
 			Span span;
 			var index = Find(offset, out span);
-			if (index < 0) return;		//	nothing to be delete beyond tail.
+			if (index < 0) return; //	nothing to be delete beyond tail.
 
 			var remain = length;
 			while (remain > 0)
 			{
-				if (span == null)	//	already at the end of table.
+				if (span == null) //	already at the end of table.
 					break;
 
 				var toDeleteFromSpan = span.Length - index;
@@ -191,12 +206,6 @@
 			}
 		}
 
-		private static void Bind(Span s1, Span s2)
-		{
-			if (s1 != null) s1.Next = s2;
-			if (s2 != null) s2.Previous = s1;
-		}
-
 		public long Find(long offset, out Span span)
 		{
 			long position = 0;
@@ -217,6 +226,12 @@
 
 			span = null;
 			return -1;
+		}
+
+		private static void Bind(Span s1, Span s2)
+		{
+			if (s1 != null) s1.Next = s2;
+			if (s2 != null) s2.Previous = s1;
 		}
 	}
 }

@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditor.Core", "TextEditor.Core\TextEditor.Core.csproj", "{682535D4-42C2-44BC-A34E-F3A76A67F440}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEditor.Core.Tests", "TestEditor.Core.Tests\TestEditor.Core.Tests.csproj", "{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WGet", "WGet\WGet.csproj", "{F158FBD6-1905-4B71-A0AB-06366073C17A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditor", "TextEditor\TextEditor.csproj", "{518E6E16-4C49-4144-9AC1-5A8A82C0D16D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F158FBD6-1905-4B71-A0AB-06366073C17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F158FBD6-1905-4B71-A0AB-06366073C17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F158FBD6-1905-4B71-A0AB-06366073C17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F158FBD6-1905-4B71-A0AB-06366073C17A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{518E6E16-4C49-4144-9AC1-5A8A82C0D16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{518E6E16-4C49-4144-9AC1-5A8A82C0D16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{518E6E16-4C49-4144-9AC1-5A8A82C0D16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{518E6E16-4C49-4144-9AC1-5A8A82C0D16D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
