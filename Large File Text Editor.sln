@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditor.Core", "TextEdit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEditor.Core.Tests", "TestEditor.Core.Tests\TestEditor.Core.Tests.csproj", "{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WGet", "WGet\WGet.csproj", "{F158FBD6-1905-4B71-A0AB-06366073C17A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F8C9D89-BFF8-4443-BA24-BA8CD76F64A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F158FBD6-1905-4B71-A0AB-06366073C17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F158FBD6-1905-4B71-A0AB-06366073C17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F158FBD6-1905-4B71-A0AB-06366073C17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F158FBD6-1905-4B71-A0AB-06366073C17A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
