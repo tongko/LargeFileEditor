@@ -56,8 +56,8 @@ namespace TextEditor.Core
 				var len = span.Length - start;
 				len = len > count ? count : len;
 				var temp = span.Buffer == 0
-					? GetBufferFromMapped(span.Offset + start, (int) len)
-					: GetBufferFromEdit(span.Offset + start, (int) len);
+					? GetBufferFromMapped(span.Offset + start, (int)len)
+					: GetBufferFromEdit(span.Offset + start, (int)len);
 
 				count -= temp.Length;
 				span = span.Next;
@@ -66,6 +66,20 @@ namespace TextEditor.Core
 			var readCount = c - count;
 			_position += readCount;
 			return readCount;
+		}
+
+		public int Read(long offset, byte[] buffer, int index, int count)
+		{
+			if (offset < 0)
+				throw new ArgumentOutOfRangeException("offset", "Must be positive value within stream.");
+
+			if (buffer == null)
+				throw new ArgumentNullException("buffer");
+			if (index < 0)
+				throw new ArgumentOutOfRangeException("index", "Must be positive number within the buffer length.");
+			if (buffer.Length - index < count)
+				throw new ArgumentOutOfRangeException("count", "Buffer must be large enough to hold 'count' element.");
+
 		}
 
 		public void Open(string fileName)
@@ -120,7 +134,7 @@ namespace TextEditor.Core
 
 				var len = length > BufferSize ? BufferSize : length;
 				var buffer = new byte[len];
-				var count = source.Read(buffer, 0, (int) len);
+				var count = source.Read(buffer, 0, (int)len);
 				if (count <= 0)
 					break;
 
@@ -170,7 +184,7 @@ namespace TextEditor.Core
 				_stream = _mapped.CreateViewStream(baseIdx, MemBlockSize);
 
 			var start = offset - baseIdx;
-			var len = (int) (_stream.Length - start);
+			var len = (int)(_stream.Length - start);
 			len = len < length ? len : length;
 
 			var buff = new byte[len];
@@ -187,9 +201,9 @@ namespace TextEditor.Core
 
 		private static long CalcIndexBase(long index)
 		{
-			if (index < MemBlockSize/2)
+			if (index < MemBlockSize / 2)
 				return 0;
-			return ((index + MemBlockSize/4) & (~(MemBlockSize/2 - 1))) - MemBlockSize/2;
+			return ((index + MemBlockSize / 4) & (~(MemBlockSize / 2 - 1))) - MemBlockSize / 2;
 		}
 
 		private void CreateMappedFile()
@@ -224,7 +238,7 @@ namespace TextEditor.Core
 		}
 
 		#endregion
-		
+
 
 		#region IDisposable
 

@@ -44,12 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentWell.cs">
+    <Compile Include="DocWell\DocumentWell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DocumentWell.Designer.cs">
+    <Compile Include="DocWell\DocumentWell.Designer.cs">
       <DependentUpon>DocumentWell.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocWell\Tab.cs" />
+    <Compile Include="DocWell\TabHeightChangingEventArgs.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,13 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Tab.Designer.cs">
-      <DependentUpon>Tab.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="DocumentWell.resx">
+    <EmbeddedResource Include="DocWell\DocumentWell.resx">
       <DependentUpon>DocumentWell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
